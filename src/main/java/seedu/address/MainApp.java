@@ -62,12 +62,12 @@ public class MainApp extends Application {
 
         UserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(config.getUserPrefsFilePath());
         userPrefs = initPrefs(userPrefsStorage);
-        AddressBookStorage addressBookStorage = new XmlAddressBookStorage(userPrefs.getAddressBookFilePath());
+        AddressBookStorage addressBookStorage = new XmlAddressBookStorage(userPrefs.getHealthplanFilePath());
         storage = new StorageManager(addressBookStorage, userPrefsStorage);
 
         initLogging(config);
 
-        model = initModelManager(storage, userPrefs);
+        model = initModelManagerHP(storage, userPrefs);
 
         logic = new LogicManager(model);
 
@@ -101,10 +101,8 @@ public class MainApp extends Application {
         return new ModelManager(initialData, userPrefs);
     }
 
-    /**
-     * method to initiate the model for health plans
-     */
-    private Model initModelManagerHp(Storage storage, UserPrefs userPrefs) {
+
+    private Model initModelManagerHP(Storage storage, UserPrefs userPrefs) {
         Optional<ReadOnlyAppContent> addressBookOptional;
         ReadOnlyAppContent initialData;
         try {

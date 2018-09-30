@@ -4,9 +4,8 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 
-/**
- * Class to handle the plan name
- */
+
+
 public class HealthPlanName {
 
     public static final String MESSAGE_NAME_CONSTRAINTS =

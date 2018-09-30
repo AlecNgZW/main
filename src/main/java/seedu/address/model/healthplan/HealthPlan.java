@@ -1,12 +1,17 @@
 package seedu.address.model.healthplan;
 
+
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
-/**
- *  class to handle the overall frame of health plans
- */
+import seedu.address.model.tag.Tag;
+
+
+
 public class HealthPlan {
     // Identity fields
     private final HealthPlanName name;
@@ -17,16 +22,16 @@ public class HealthPlan {
     private final Duration duration;
     private final Scheme scheme;
 
-    public HealthPlan(HealthPlanName name, TargetWeight tWeight, CurrentWeight cWeight, CurrentHeight cHeight, Age age,
-                      Duration duration, Scheme scheme) {
-        requireAllNonNull(name, tWeight, cWeight, cHeight, age, duration, scheme);
+    public HealthPlan(HealthPlanName name,TargetWeight tWeight, CurrentWeight cWeight, CurrentHeight cHeight,Age age, Duration duration, Scheme scheme) {
+        requireAllNonNull(name, tWeight, cWeight, cHeight, age,duration,scheme);
         this.name = name;
         this.tWeight = tWeight;
         this.cWeight = cWeight;
         this.cHeight = cHeight;
-        this.age = age;
-        this.duration = duration;
-        this.scheme = scheme;
+        this.age=age;
+        this.duration=duration;
+        this.scheme=scheme;
+
 
     }
 
@@ -53,14 +58,10 @@ public class HealthPlan {
         return duration;
     }
 
-    public Scheme getScheme() {
-        return scheme;
-    }
+    public Scheme getScheme(){return scheme;}
 
 
-    /**
-     * check if the current plan is same as provided
-     */
+
     public boolean isSamePlan(HealthPlan otherPlan) {
         if (otherPlan == this) {
             return true;
@@ -74,7 +75,7 @@ public class HealthPlan {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, age, cWeight, cHeight, tWeight, duration, scheme);
+        return Objects.hash(name, age, cWeight, cHeight, tWeight,duration,scheme);
     }
 
     @Override

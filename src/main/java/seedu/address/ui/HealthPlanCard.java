@@ -2,14 +2,13 @@ package seedu.address.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import seedu.address.model.healthplan.HealthPlan;
+//import seedu.address.model.person.Person;
 
-/**
- *
- * Class to handle the exterior of the Healthplan Panel
- */
 public class HealthPlanCard extends UiPart<Region> {
 
     private static final String FXML = "HealthPlanListCard.fxml";
@@ -38,10 +37,6 @@ public class HealthPlanCard extends UiPart<Region> {
     private Label scheme;
 
 
-    /**
-     *
-     * Constructor for panel
-     */
     public HealthPlanCard(HealthPlan plan, int displayedIndex) {
         super(FXML);
         this.plan = plan;
@@ -54,6 +49,8 @@ public class HealthPlanCard extends UiPart<Region> {
         duration.setText(plan.getDuration().value);
         scheme.setText(plan.getScheme().toString());
 
+
+      //  person.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 
     @Override

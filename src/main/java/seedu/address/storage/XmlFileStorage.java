@@ -36,11 +36,8 @@ public class XmlFileStorage {
         }
     }
 
-    /**
-     *
-     * Method to save data into file using the serializableHealthPlan format
-     */
-    public static void saveDataToFileHp(Path file, XmlSerializableHealthPlan hp)
+
+    public static void saveDataToFile(Path file, XmlSerializableHealthPlan hp)
             throws FileNotFoundException {
         try {
             XmlUtil.saveDataToFile(file, hp);
@@ -52,7 +49,7 @@ public class XmlFileStorage {
     /**
      * Returns address book in the file or an empty address book
      */
-    public static XmlSerializableHealthPlan loadDataFromSaveFileHp(Path file) throws DataConversionException,
+    public static XmlSerializableHealthPlan loadDataFromSaveFileHP(Path file) throws DataConversionException,
             FileNotFoundException {
         try {
             return XmlUtil.getDataFromFile(file, XmlSerializableHealthPlan.class);

@@ -4,9 +4,7 @@ import seedu.address.commons.events.BaseEvent;
 import seedu.address.model.healthplan.HealthPlan;
 
 
-/**
- *  UI event when plan is changed
- */
+
 public class PlanPanelSelectionChangedEvent extends BaseEvent {
 
     private final HealthPlan newSelection;
